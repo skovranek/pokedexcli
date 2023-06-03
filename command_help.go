@@ -13,8 +13,6 @@ func commandHelp(c *config) error {
 	}
 
 	fmt.Println("--------------------\nPokedex Instructions\n--------------------")
-
-	commands := getCommands()
 /*
 	Instructions:
 	1) Map/mapb
@@ -24,8 +22,8 @@ func commandHelp(c *config) error {
 	5) Pokedex
 	6) Exit
 */
-	list := make([]command, len(commands))
-	for _, command := range commands {
+	list := make([]command, len(c.ommands))
+	for _, command := range c.ommands {
 		list[command.order] = command
 	}
 
