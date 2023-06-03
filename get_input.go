@@ -4,8 +4,11 @@ import (
 	"strings"
 )
 
-func getInput(c *config) (string, string) {
-	input, _ := c.buffer.GetInput()
+func getInput(c *config) (string, string, error) {
+	input, err := c.buffer.GetInput()
+	if err != nil {
+		return "", "", err
+	}
 
 	input = strings.ToLower(input)
 	input = strings.ReplaceAll(input, "-", " ")
@@ -17,5 +20,5 @@ func getInput(c *config) (string, string) {
 		second = strings.Join(inputs[1:], " ")
 	}
 
-	return first, second
+	return first, second, nil
 }

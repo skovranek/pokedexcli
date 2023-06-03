@@ -11,8 +11,12 @@ func REPL(c *config) {
 	for ; c.ontinue == true; {
 		fmt.Print("pokedex > ")
 
-		input := ""
-		input, c.arg = getInput(c)
+		input, arg, err := getInput(c)
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+		c.arg = arg
 
 		command, ok := c.ommands[input]
 
@@ -20,7 +24,7 @@ func REPL(c *config) {
 			msg := "(Enter 'help' to list available commands)"
 			fmt.Println(invalidMsg+msg)
 		} else {
-			err := command.callback(c)
+			err = command.callback(c)
 			if err != nil {
 				fmt.Println(err)
 			}

@@ -13,7 +13,10 @@ func commandExit(c *config) error {
 
 	fmt.Print("Exit? (y/n) ")
 
-	input, _ := getInput(c)
+	input, _, err := getInput(c)
+	if err != nil {
+		return err
+	}
 
 	if input == "y" || input == "yes" {
 		c.ontinue = false
