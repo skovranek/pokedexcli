@@ -1,2 +1,4 @@
+github.com/skovranek/buftermio v0.0.0-20230526065822-baf1e331d4f9 h1:ZcbecfdCPzG0tKXR/ioRR2bqyhuPdrmahKyzgPJ0ZdM=
+github.com/skovranek/buftermio v0.0.0-20230526065822-baf1e331d4f9/go.mod h1:uqaVGdO1LYMXwi1T6Mboazql5GQb/2T5E+Hn5bFYS3A=
 golang.org/x/sys v0.8.0 h1:EBmGv8NaZBZTWvrbjNoL6HVt+IVy3QDQpJs7VRIw3tU=
 golang.org/x/sys v0.8.0/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=

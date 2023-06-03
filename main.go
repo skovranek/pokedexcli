@@ -1,14 +1,13 @@
 package main
 
-import ("github.com/skovranek/pokedexcli/internal/pokeapi"
-	"github.com/skovranek/bufferio"
+import (
+	"github.com/skovranek/pokedexcli/internal/pokeapi"
+	"github.com/skovranek/buftermio"
 )
 
 /*
-[x] fix tab problems in input
-[x] use up arrows for input
-[ ] graceful close?
-[ ] fix link to bufferio (and bufferio name)
+TODO:
+[ ] graceful close
 */
 
 const (
@@ -19,7 +18,7 @@ func main() {
 	c := &config{
 		ontinue:        true,
 		ommands:        getCommands(),
-		buffer:         bufferio.NewBuffer(),
+		buffer:         buftermio.NewBuffer(),
 
 		arg:            "",
 		encounters:     "",
@@ -34,7 +33,7 @@ func main() {
 type config struct {
 	ontinue        bool
 	ommands        map[string]command
-	buffer         bufferio.Buffer
+	buffer         buftermio.Buffer
 	arg            string
 
 	encounters     string

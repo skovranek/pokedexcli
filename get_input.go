@@ -5,7 +5,7 @@ import (
 )
 
 func getInput(c *config) (string, string) {
-	input := c.buffer.GetInput()
+	input, _ := c.buffer.GetInput()
 
 	input = strings.ToLower(input)
 	input = strings.ReplaceAll(input, "-", " ")
